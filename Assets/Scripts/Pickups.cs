@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Pickups : MonoBehaviour
 {
     public ParticleSystem Pickup;
+
+    public GameObject door;
     void Start()
     {
         Pickup.Stop();
@@ -17,6 +19,7 @@ public class Pickups : MonoBehaviour
         {
             Destroy(other.gameObject);
             Pickup.Play();
+            Destroy(door);
         }
     }
 }
